@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -46,6 +47,19 @@ class Post extends Model
     {
         return Carbon::parse($this->created_at)->diffForHumans();
     }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = Str::title($value);
+    }
+
+    public function getTitleAttribute($value)
+    {
+        return Str::upper($value);
+    }
+
+
+
 
     /*public function validate($request)
     {

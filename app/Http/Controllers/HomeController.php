@@ -93,7 +93,7 @@ class HomeController extends Controller
             $posts = Post::query()->orderBy('id', 'desc')->get();
             Cache::put('posts', $posts);
         }*/
-        $posts = Post::query()->orderBy('id', 'desc')->paginate(12);
+        $posts = Post::query()->orderBy('created_at', 'desc')->paginate(12);
         return view('home', compact('title', 'posts'));
     }
 

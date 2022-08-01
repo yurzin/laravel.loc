@@ -48,7 +48,7 @@
                 @if(auth()->check())
                     <a class="text-white">Здравствуйте {{auth()->user()->name}}
                     @if(auth()->user()->avatar)
-                            <img src="{{asset('storage/' . auth()->user()->avatar)}}" height="30" alt="">
+                            <img src="{{asset('storage/' . auth()->user()->avatar)}}" height="30" style="margin-left: 15px" alt="">
                         @endif
                     </a>
                     <a href="{{ route('logout') }}" class="text-white">Logout</a>

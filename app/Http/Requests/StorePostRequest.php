@@ -25,7 +25,7 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5|max:50',
-            'content' => 'required|min:50|max:500',
+            'content' => 'required|min:10|max:50',
             'rubric_id' => 'required|integer'
         ];
     }
